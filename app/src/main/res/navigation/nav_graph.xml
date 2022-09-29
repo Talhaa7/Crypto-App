@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/searchCoinsFragment"
+        android:name="com.example.loodosandroid.features.search.SearchCoinsFragment"
+        android:label="SearchCoinsFragment">
+        <action
+            android:id="@+id/navigateToCoinDetailFragment"
+            app:destination="@id/coinDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/coinDetailFragment"
+        android:name="com.example.loodosandroid.features.detail.CoinDetailFragment"
+        android:label="CoinDetailFragment" >
+        <argument
+            android:name="coinId"
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.loodosandroid.features.login.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/navigateToSearchCoinsFragment"
+            app:destination="@id/searchCoinsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.loodosandroid.features.profile.ProfileFragment"
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/navigateToLoginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteCoinsFragment"
+        android:name="com.example.loodosandroid.features.favorite.FavoriteCoinsFragment"
+        android:label="FavoriteCoinsFragment" >
+        <action
+            android:id="@+id/navigateToCoinDetailFragment"
+            app:destination="@id/coinDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+
+</navigation>
